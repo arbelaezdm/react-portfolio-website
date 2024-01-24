@@ -1,16 +1,18 @@
-import React from 'react'
-import './nav.css'
-import {IoIosHome} from 'react-icons/io'
-import {FaUserAlt} from 'react-icons/fa'
-import {BsJournalBookmarkFill} from 'react-icons/bs'
-import {RiCustomerServiceFill} from 'react-icons/ri'
-import {BiMessageRoundedDots} from 'react-icons/bi'
-import { useState } from 'react'
+import React from "react";
+import "./nav.css";
+import { IoIosHome } from "react-icons/io";
+import { FaUserAlt } from "react-icons/fa";
+import { BiMessageRoundedDots } from "react-icons/bi";
+import { GrCertificate } from "react-icons/gr";
+import { MdOutlineAssuredWorkload } from "react-icons/md";
+import { useState } from "react";
+import { IoLibrary } from "react-icons/io5";
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState('#')
+  const [activeNav, setActiveNav] = useState("#");
   return (
     <nav>
+      {/* HOME */}
       <a
         href="#"
         onClick={() => setActiveNav("#")}
@@ -18,7 +20,7 @@ const Nav = () => {
       >
         <IoIosHome />
       </a>
-
+       {/* ABOUT ME */}
       <a
         href="#about"
         onClick={() => setActiveNav("#about")}
@@ -26,30 +28,40 @@ const Nav = () => {
       >
         <FaUserAlt />
       </a>
-
-      <a href="#experience"
-      onClick={() => setActiveNav("#experience")}
-      className={activeNav === "#experience" ? "active" : ""}
+      {/* SKILLS */}
+      <a
+        href="#skills"
+        onClick={() => setActiveNav("#skills")}
+        className={activeNav === "#skills" ? "active" : ""}
       >
-        <BsJournalBookmarkFill />
+        <GrCertificate />
       </a>
-
-      <a href="#services"
-      onClick={() => setActiveNav("#services")}
-      className={activeNav === "#services" ? "active" : ""}
+      {/* EXPERIENCE */}
+      <a
+        href="#experiences"
+        onClick={() => setActiveNav("#experience")}
+        className={activeNav === "#experience" ? "active" : ""}
       >
-        <RiCustomerServiceFill />
+        <MdOutlineAssuredWorkload />
       </a>
-
-      <a href="#contact"
-      onClick={() => setActiveNav("#contact")}
-      className={activeNav === "#contact" ? "active" : ""}
+      {/* PORTFOLIO */}
+      <a
+        href="#portfolio"
+        onClick={() => setActiveNav("#portfolio")}
+        className={activeNav === "#portfolio" ? "active" : ""}
+      >
+        <IoLibrary />
+      </a>
+      {/* CONTACT */}
+      <a
+        href="#contact"
+        onClick={() => setActiveNav("#contact")}
+        className={activeNav === "#contact" ? "active" : ""}
       >
         <BiMessageRoundedDots />
       </a>
-
     </nav>
   );
-}
+};
 
-export default Nav
+export default Nav;

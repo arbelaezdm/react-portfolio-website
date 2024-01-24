@@ -1,49 +1,149 @@
 .portfolio__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
 }
 
 .portfolio__item {
-    background: var(--color-bg-variant);
-    padding: 1.3rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
-}
-
-.portfolio__item:hover {
-    border-color: var(--color-primary-variant);
-    background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  background: var(--color-bg-variant);
+  padding: 1.3rem;
+  border-radius: 2rem;
+  border: 0.5px solid var(--color-primary);
+  transition: var(--transition);
 }
 
 .portfolio__item-image {
-    border-radius: 1.5rem;
-    overflow: hidden;
+  overflow: hidden;
+  margin-bottom: 1em;
+  /* height: 100%; */
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.icon_technology {
+  font-size: 3em;
+  margin-left: 0.5em;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.portfolio__title {
+  font-size: 1em;
+  margin-bottom: 1em;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.text_description {
+  font-size: 0.8em;
+  margin-bottom: 1.4em;
+  /* height: 25%; */
+}
+
+.text_notes {
+  font-size: 0.8em;
+  margin-top: 1em;
+  /* height: 25%; */
+}
+
+.note_subtitle {
+  font-size: 1.2em;
+}
+
+.text_notes_click {
+  font-size: 2em;
+  margin-top: 0.5em;
+}
+
+.allright_container {
+  display: flex;
+  justify-content: end;
+  height: max-content;
+  margin-right: 1em;
+  position: relative;
+  bottom: 0;
+}
+
+.text_allrights {
+  font-size: 0.8em;
+  margin-top: 1.2em;
+}
+
+.portfolio__item:hover {
+  border-color: black;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.portfolio__item:hover .icon_technology {
+  transition: var(--transition);
+  color: black;
+}
+
+.portfolio__item:hover .portfolio__title {
+  color: black;
+  transition: var(--transition);
+}
+
+.portfolio__item:hover .text_description {
+  color: black;
+  transition: var(--transition);
+}
+
+.portfolio__item:hover .text_notes {
+  color: black;
+  transition: var(--transition);
+}
+
+.portfolio__item:hover .text_allrights {
+  color: black;
+  transition: var(--transition);
+}
+
+.portfolio__item:hover .text_notes_click {
+  color: black;
+  transition: var(--transition);
 }
 
 .portfolio__item h3 {
-    margin: 1.2 0 2rem;
+  margin: 1.2 0 2rem;
 }
 
 .portfolio__item-cta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon_allright {
+  font-size: 1.2em;
+  margin-left: 0.6em;
+}
+
+.arepas_diana_image {
+  border-radius: 15px;
 }
 
 /* ================= MEDIA QUERIES (MEDIUM DEVICES - TABLETS) ==================== */
 @media screen and (max-width: 1024px) {
-    .portfolio__container {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.2rem;
-    }
+  .portfolio__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
 }
 
 /* ================= SMAILL QUERIES (SMALL DEVICES - PHONES) ==================== */
 @media screen and (max-width: 600px) {
-    .portfolio__container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+  .portfolio__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }

@@ -1,52 +1,59 @@
 header {
-    height: 100vh;
-    padding-top: 7rem;
+    height: auto;
+    padding-top: 4rem;
     overflow: hidden;
 }
 
 .header__container {
     text-align: center;
     height: 100%;
-    position: relative;
+    /* position: relative; */
 }
 
+
+.profession-text{
+    font-size: 1.2em;
+}
 /* ================ CTA ===================== */
-.cta {
-    margin-top: 2.5rem;
+.container_links {
+    margin-top: 1.5rem;
     display: flex;
     gap: 1.2rem;
     justify-content: center;
 }
 
-/* ================ SOCIALS ===================== */
-.header__socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    position: absolute;
-    left: 0;
-    bottom: 3rem;
+.container_links a {
+    color: black;
+    border-color: black;
 }
 
-.header__socials::after {
-    content: "";
+/* ================ SOCIALS ===================== */
+.container_socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 3em;
+    margin-top: 0.3em;
+}
+
+/* .container_socials::after {
     width: 1px;
     height: 20rem;
     background: var(--color-primary);
-}
+} */
 
 /* ================ ME ===================== */
 .me {
-    background: linear-gradient(var(--color-primary), transparent);
-    width: 22rem;
-    height: 30rem;
-    position: absolute;
-    left: calc(50% - 11rem);
-    margin-top: 4rem;
-    border-radius: 12rem 12rem 0 0;
+    display: flex;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    width: 14rem;
+    height: 16rem;
+    margin-top: 1.5rem;
+    border-radius: 10rem;
     overflow: hidden;
-    padding: 5rem 1.5rem 1.5rem 1.5 rem;
 }
 
 /* ================ SCROLL DOWN ===================== */
@@ -62,23 +69,18 @@ header {
 /* ================= MEDIA QUERIES (MEDIUM DEVICES - TABLETS) ==================== */
 @media screen and (max-width: 1024px) {
     header {
-        height: 100vh;
-    }
-
-    .header__socials {
-        display: none;
+        height: auto;
     }
 }
 
 /* ================= MEDIA QUERIES (SMAILL DEVICES - PHONES) ==================== */
 @media screen and (max-width: 600px) {
     header {
-        height: 100vh;
+        height: auto;
     }
 
-    .header__socials,
     .scroll__down {
         display: none;
     }
-    
+
 }

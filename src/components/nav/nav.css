@@ -2,12 +2,12 @@ nav {
     background: rgba(0, 0, 0, 0.3);
     width: max-content;
     display: block;
-    padding: 0.7rem 1.7rem;
+    padding: 0.4rem 1.6rem;
     z-index: 2;
     position: fixed;
     left: 50%;
     transform: translatex(-50%);
-    bottom: 2rem;
+    bottom: 1rem;
     display: flex;
     gap: 0.8rem;
     border-radius: 3rem;
@@ -16,11 +16,11 @@ nav {
 
 nav a {
     background: transparent;
-    padding: 0.9rem;
+    padding: 0.5rem;
     border-radius: 50%;
     display: flex;
     color: var(--color-light);
-    font-size: 2.1rem;
+    font-size: 1.6rem;
 }
 
 nav a:hover {
@@ -28,6 +28,6 @@ nav a:hover {
 }
 
 nav a.active {
-    background: var(--color-bg);
-    color: var(--color-white);
+    background: var(--color-primary);
+    color: var(--color-bg);
 }

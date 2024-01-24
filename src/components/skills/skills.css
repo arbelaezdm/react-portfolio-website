@@ -1,0 +1,99 @@
+.skills__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+}
+
+.skill {
+  background: var(--color-bg-variant);
+  border-radius: 0 0 1em 1em;
+  border: 0.5px solid var(--color-primary);
+  height: fit-content;
+  transition: var(--transition);
+}
+
+.skill:hover {
+  background: transparent;
+  border-color: black;
+  cursor: default;
+}
+
+.skill:hover .skill__list_icon {
+  transition: var(--transition);
+  color: black;
+}
+
+.skill:hover .skill__list_icon {
+  transition: var(--transition);
+  color: black;
+}
+
+.skill:hover .skill__list p {
+  color: black;
+}
+
+.skill:hover .engineer_list_icon {
+  color: black;
+}
+
+.skill__head {
+  background: var(--color-primary);
+  padding: 0.5rem;
+  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.skill:hover .skill__head {
+  transition: var(--transition);
+  border-bottom: 0.5px solid black;
+}
+
+.skill__head h3 {
+  color: black;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.skill__list {
+  padding: 1rem;
+}
+
+.skill__list li {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.skill__list_icon {
+  color: var(--color-primary);
+  margin-top: 2px;
+  font-size: 1.6em;
+}
+
+.engineer_list_icon {
+  margin-top: 2px;
+  color: var(--color-primary);
+  font-size: 1.4em;
+}
+
+.skill__list p {
+  font-size: 0.9rem;
+}
+
+/* ================= MEDIA QUERIES (MEDIUM DEVICES - TABLETS) ==================== */
+@media screen and (max-width: 1024px) {
+  .skills__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .skill {
+    height: auto;
+  }
+}
+
+/* ================= MEDIA QUERIES (SMAILL DEVICES - PHONES) ==================== */
+@media screen and (max-width: 600px) {
+  .skills__container {
+    grid-template-columns: 1fr;
+  }
+}

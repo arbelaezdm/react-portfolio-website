@@ -1,70 +1,91 @@
-.experience__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.container > p {
+  margin-bottom: 2em;
+  color: black;
 }
 
-.experience__container > div {
-    background: var(--color-bg-variant);
-    padding: 2.4rem 5rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
+.experiences__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3em;
 }
 
-.experience__container > div:hover {
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
+.experience {
+  background: var(--color-bg-variant);
+  border-radius: 0 0 2rem 2rem;
+  border: 0.5px solid var(--color-primary);
+  height: max-content;
+  transition: var(--transition);
 }
 
-.experience__container > div h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--color-primary);
+.experience:hover .experience__head {
+  transition: var(--transition);
+  border-bottom: 0.5px solid black;
 }
 
-.experience__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
+.experience:hover {
+  transition: var(--transition);
+  background: transparent;
+  border-color: black;
+  cursor: default;
 }
 
-.experience__details {
-    display: flex;
-    gap: 1rem;
+.experience:hover .experience__list_icon {
+  transition: var(--transition);
+  color: black;
 }
 
-.experience__details-icon {
-    margin-top: 6px;
-    color: var(--color-primary)
+.experience:hover .experience__list p {
+  transition: var(--transition);
+  color: black;
+}
+
+.experience__head {
+  background: var(--color-primary);
+  padding: 1rem;
+  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.experience__head h3 {
+  color: black;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.experience__list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 1.5rem;
+}
+
+.experience__list li {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  align-items: center;
+}
+
+.experience__list_icon {
+  color: var(--color-primary);
+  margin-top: 2px;
+  font-size: 1.5em;
 }
 
 /* ================= MEDIA QUERIES (MEDIUM DEVICES - TABLETS) ==================== */
 @media screen and (max-width: 1024px) {
-    .experience__container {
-        grid-template-columns: 1fr;
-    }
+  .experiences__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 
-    .experience__container > div {
-        width: 80%;
-        padding: 2rem;
-        margin: 0 auto;
-    }
-
-    .experience__content {
-        padding: 1rem;
-    }
+  .experience {
+    height: auto;
+  }
 }
 
-/* ================= SMAILL QUERIES (SMALL DEVICES - PHONES) ==================== */
+/* ================= MEDIA QUERIES (SMAILL DEVICES - PHONES) ==================== */
 @media screen and (max-width: 600px) {
-    .experience__container {
-        gap: 1rem;
-    }
-
-    .experience__container > div {
-        width: 100%;
-        padding: 2rem 1rem;
-    }
+  .experiences__container {
+    grid-template-columns: 1fr;
+  }
 }
