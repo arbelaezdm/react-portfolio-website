@@ -3,6 +3,22 @@
   color: black;
 }
 
+.experience_description{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 2em;
+}
+
+.about_icon{
+  font-size: 4em;
+}
+
+.about__card {
+  justify-content: center;
+  align-items: center;
+}
+
 .experiences__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -15,6 +31,7 @@
   border: 0.5px solid var(--color-primary);
   height: max-content;
   transition: var(--transition);
+  margin-top: 4em;
 }
 
 .experience:hover .experience__head {

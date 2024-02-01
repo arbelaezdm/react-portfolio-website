@@ -6,19 +6,29 @@ import { SiPowerbi } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { DiMysql } from "react-icons/di";
 import { BsPatchCheckFill } from "react-icons/bs";
+import { PiCertificate } from "react-icons/pi";
 
 const Experience = () => {
   return (
     <section id="experiences">
       <h2>Experience</h2>
 
-      <div className="container">
+      <div className="container experience_description">
+        <article className="about__card">
+          <div>
+            <PiCertificate className="about_icon" />
+          </div>
+          <span>+18 Years of Manufacturing Experience</span>
+
+          <br />
+          <span> +3 Years of Software Development Experience</span>
+        </article>
         <p>
           I have worked for more than 18 years in the manufacturing industry
           passing for several roles which have allowed me to apply my knowledge
           in my professional field and achieving gain new skills that have
-          improve my professional career. During my last years I have worked
-          in software development enhancing my skills using technologies in
+          improve my professional career. During my last years I have worked in
+          software development enhancing my skills using technologies in
           frontend, backend and data analysis.
         </p>
       </div>

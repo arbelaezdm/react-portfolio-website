@@ -16,11 +16,11 @@ nav {
 
 nav a {
     background: transparent;
-    padding: 0.5rem;
+    padding: 0.4rem;
     border-radius: 50%;
     display: flex;
     color: var(--color-light);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
 nav a:hover {
@@ -29,5 +29,5 @@ nav a:hover {
 
 nav a.active {
     background: var(--color-primary);
-    color: var(--color-bg);
+    color: black;
 }

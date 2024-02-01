@@ -20,6 +20,10 @@
   transition: var(--transition);
 }
 
+.contact__option a:hover {
+  text-decoration: underline;
+}
+
 .contact__option-icon {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
@@ -53,6 +57,10 @@ textarea {
   color: black;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
+}
+
+.errors {
+  color: red;
 }
 
 /* ================= MEDIA QUERIES (MEDIUM DEVICES - TABLETS) ==================== */

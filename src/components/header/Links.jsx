@@ -15,10 +15,10 @@ const Links = () => {
         </a>
       </div>
       <div className="container_socials">
-        <a href="https://linkedin.com/in/diego-arbelaez" target="_blank">
+        <a href="https://linkedin.com/in/diego-arbelaez" target="_blank" className="social_links">
           <BsLinkedin />
         </a>
-        <a href="https://github.com/arbelaezdm" target="_blank">
+        <a href="https://github.com/arbelaezdm" target="_blank" className="social_links">
           <BsGithub />
         </a>
       </div>

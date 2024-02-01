@@ -14,7 +14,7 @@ header {
 .profession-text{
     font-size: 1.2em;
 }
-/* ================ CTA ===================== */
+
 .container_links {
     margin-top: 1.5rem;
     display: flex;
@@ -27,6 +27,7 @@ header {
     border-color: black;
 }
 
+
 /* ================ SOCIALS ===================== */
 .container_socials {
     display: flex;
@@ -36,11 +37,10 @@ header {
     margin-top: 0.3em;
 }
 
-/* .container_socials::after {
-    width: 1px;
-    height: 20rem;
-    background: var(--color-primary);
-} */
+.social_links:hover {
+    transition: var(--transition);
+    color: black;
+}
 
 /* ================ ME ===================== */
 .me {
@@ -49,7 +49,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     justify-content: center;
-    width: 14rem;
+    width: 16rem;
     height: 16rem;
     margin-top: 1.5rem;
     border-radius: 10rem;

@@ -7,7 +7,11 @@ footer {
 }
 
 footer a {
-  color: var(--color-bg);
+  color: black;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 .footer__logo{
@@ -33,8 +37,7 @@ footer a {
 }
 
 .footer__socials a{
-  background: var(--color-bg);
-  color: var(--color-white);
+  color: black;
   padding: 0.4rem;
   border-radius: 0.7rem;
   display: flex;
@@ -43,14 +46,13 @@ footer a {
 }
 
 .footer__socials a:hover{
-  background: transparent;
   color: var(--color-bg);
-  border-color: var(--color-bg);
+  transition: var(--transition);
 }
 
 .footer__copyright {
   margin-bottom: 4rem;
-  color: var(--color-bg);
+  color: black;
 }
 
 /* ================= MEDIA QUERIES (SMAILL DEVICES - PHONES) ==================== */

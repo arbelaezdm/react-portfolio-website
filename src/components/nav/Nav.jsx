@@ -20,7 +20,7 @@ const Nav = () => {
       >
         <IoIosHome />
       </a>
-       {/* ABOUT ME */}
+      {/* ABOUT ME */}
       <a
         href="#about"
         onClick={() => setActiveNav("#about")}
