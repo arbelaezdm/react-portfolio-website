@@ -28,7 +28,7 @@ const Experience = () => {
           passing for several roles which have allowed me to apply my knowledge
           in my professional field and achieving gain new skills that have
           improve my professional career. During my last years I have worked in
-          software development enhancing my skills using technologies in
+          manufacturing industry and software development enhancing my skills using technologies in
           frontend, backend and data analysis.
         </p>
       </div>

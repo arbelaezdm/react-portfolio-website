@@ -1,12 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./contac.css";
+import { Navigate, useNavigate } from "react-router-dom";
+import "./contact.css";
 import { FiMail } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
 import formValidation from "../FormValidation";
 
 const Contact = () => {
+  const navigate = useNavigate();
+
   const form = useRef();
+
+  const userName = useRef("")
+  const email = useRef("")
 
   useEffect(() => {}, []);
 
@@ -22,46 +28,47 @@ const Contact = () => {
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  // =========  HANDLE SUBMIT  ============
+  // ============  HANDLE SUBMIT  ============
   const sendEmail = (e) => {
     e.preventDefault();
+
+    // ======= FORM VALIDATION ========
     if (errors.name === "" && errors.email === "") {
       console.log("user added");
-      console.log(errors);
+      userName.current.value = "";
+      email.current.value = "";
     } else {
       console.log("NOK");
-      console.log(errors);
     }
     setErrors(formValidation(user));
-    return;
 
     // ======= SEND EMAIL WITH EMAILJS ==========
-    emailjs
-      .sendForm(
-        "service_o5v42dp",
-        "template_pr6mvea",
-        form.current,
-        "V45x1_YA4pzj4R-FS"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      )
-      .then(() => {
-        setUser({
-          name: "",
-          email: "",
-        });
-      });
+    // emailjs
+    //   .sendForm(
+    //     "service_o5v42dp",
+    //     "template_pr6mvea",
+    //     form.current,
+    //     "V45x1_YA4pzj4R-FS"
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //     }
+    //   )
+    //   .then(() => {
+    //     setUser({
+    //       name: "",
+    //       email: "",
+    //     });
+    //   });
   };
 
   return (
     <section id="contact">
-      <h2>Contac Me</h2>
+      <h2>Contact Me</h2>
 
       <div className="container contact__container">
         <div className="contact__options">
@@ -86,12 +93,15 @@ const Contact = () => {
 
         {/* END OF CONTACT OPTIONS */}
 
+        {/* ========= FORM ======= */}
+
         <form ref={form}>
           <input
             type="text"
             name="name"
             placeholder="Your Full Name"
             onChange={handleInput}
+            ref={userName}
           />
           <div className="errors">
             {errors.name && <span>{errors.name}</span>}
@@ -101,6 +111,7 @@ const Contact = () => {
             name="email"
             placeholder="Your Email"
             onChange={handleInput}
+            ref={email}
           />
           <div className="errors">
             {errors.email && <span>{errors.email}</span>}
