@@ -3,20 +3,26 @@
   color: black;
 }
 
-.experience_description{
+.experience_description {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   margin-bottom: 2em;
 }
 
-.about_icon{
+.about_icon {
   font-size: 4em;
 }
 
 .about__card {
   justify-content: center;
   align-items: center;
+}
+
+.about__card:hover {
+  -webkit-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  -moz-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
 }
 
 .experiences__container {
@@ -41,6 +47,9 @@
 
 .experience:hover {
   transition: var(--transition);
+  -webkit-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  -moz-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
   background: transparent;
   border-color: black;
   cursor: default;
@@ -48,6 +57,7 @@
 
 .experience:hover .experience__list_icon {
   transition: var(--transition);
+
   color: black;
 }
 

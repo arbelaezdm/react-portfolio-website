@@ -1,5 +1,5 @@
 .about__container p {
-  color: black;
+  color: white;
 }
 .about__cards {
   display: grid;
@@ -78,10 +78,7 @@
   margin-top: 2em;
 }
 
-.lets__talk a {
-  color: black;
-  border-color: black;
-}
+
 
 /* ================= MEDIA QUERIES (MEDIUM DEVICES - TABLETS) ==================== */
 @media screen and (max-width: 1024px) {

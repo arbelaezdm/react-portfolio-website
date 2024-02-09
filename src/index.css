@@ -12,12 +12,13 @@
 }
 
 :root {
-  --color-bg: #b0c4de;
-  --color-bg-variant: #4f5d75;
+  --color-bg: white;
+  --color-bg-variant: #067bc2;
   --color-primary: #fff;
   --color-primary-variant: #fff(77, 181, 255, 0.4);
   --color-white: #fff;
   --color-light: rgba(255, 255, 255, 0.6);
+  --color-border: #067bc2;
 
   --transition: all 600ms ease;
 
@@ -88,32 +89,27 @@ a {
   transition: var(--transition);
 }
 
-/* a:hover {
+a:hover {
   color: var(--color-white);
-} */
+}
 
 .btn {
   width: max-content;
   display: inline-block;
-  color: black;
+  color: white;
   padding: 0.75rem 1.2rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid transparent;
   transition: var(--transition);
-  background-color: #fff;
+  background-color: #067bc2;
 }
 
 .btn:hover {
-  background: var(--color-white);
-  color: black;
-  border-color: transparent;
+  -webkit-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  -moz-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
 }
-
-/* .btn-primary {
-  background: var(--color-primary);
-  color: black;
-} */
 
 img {
   display: block;

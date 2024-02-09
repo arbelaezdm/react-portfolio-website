@@ -79,6 +79,9 @@
 
 .portfolio__item:hover {
   border-color: black;
+  -webkit-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  -moz-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
   background: transparent;
   transition: var(--transition);
 }

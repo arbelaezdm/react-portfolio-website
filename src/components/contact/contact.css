@@ -59,6 +59,14 @@ textarea {
   font-size: 16px;
 }
 
+.name_error {
+  border-color: red;
+}
+
+.email_error {
+  border-color: red;
+}
+
 .errors {
   color: red;
 }

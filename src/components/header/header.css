@@ -15,33 +15,6 @@ header {
     font-size: 1.2em;
 }
 
-.container_links {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
-}
-
-.container_links a {
-    color: black;
-    border-color: black;
-}
-
-
-/* ================ SOCIALS ===================== */
-.container_socials {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    font-size: 3em;
-    margin-top: 0.3em;
-}
-
-.social_links:hover {
-    transition: var(--transition);
-    color: black;
-}
-
 /* ================ ME ===================== */
 .me {
     display: flex;

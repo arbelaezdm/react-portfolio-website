@@ -1,4 +1,5 @@
 import React from "react";
+import "../links/links.css"
 import CV from "../../assets/diegoarbelaezCV.pdf";
 import { BsLinkedin } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";

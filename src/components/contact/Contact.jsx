@@ -11,11 +11,13 @@ const Contact = () => {
 
   const form = useRef();
 
-  const userName = useRef("")
-  const email = useRef("")
+  const userName = useRef("");
+  const email = useRef("");
 
   useEffect(() => {}, []);
 
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const [errors, setErrors] = useState({});
   const [user, setUser] = useState({
     name: "",
@@ -31,16 +33,34 @@ const Contact = () => {
   // ============  HANDLE SUBMIT  ============
   const sendEmail = (e) => {
     e.preventDefault();
-
+    console.log(errors);
     // ======= FORM VALIDATION ========
+
+    if (errors.name === "") {
+      setNameError(false);
+    } else {
+      setNameError(true);
+    }
+
+    if (errors.email === "") {
+      setEmailError(false);
+    } else {
+      setEmailError(true);
+    }
+
     if (errors.name === "" && errors.email === "") {
-      console.log("user added");
       userName.current.value = "";
       email.current.value = "";
-    } else {
-      console.log("NOK");
     }
+
+    // if (errors.name === "" && errors.email === "") {
+    //   console.log("user added");
+    // } else {
+    //   console.log("NOK");
+    // }
+
     setErrors(formValidation(user));
+
 
     // ======= SEND EMAIL WITH EMAILJS ==========
     // emailjs
@@ -102,6 +122,7 @@ const Contact = () => {
             placeholder="Your Full Name"
             onChange={handleInput}
             ref={userName}
+            className={nameError === true ? "name_error" : ""}
           />
           <div className="errors">
             {errors.name && <span>{errors.name}</span>}
@@ -112,6 +133,7 @@ const Contact = () => {
             placeholder="Your Email"
             onChange={handleInput}
             ref={email}
+            className={emailError === true ? "email_error" : ""}
           />
           <div className="errors">
             {errors.email && <span>{errors.email}</span>}

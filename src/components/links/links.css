@@ -1,0 +1,24 @@
+.container_links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* ================ SOCIALS ===================== */
+.container_socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 3em;
+  margin-top: 0.3em;
+}
+
+.container_socials a {
+  color: var(--color-bg-variant);
+  transition: all 2s;
+}
+
+.container_socials a:hover {
+   color: blue;
+}

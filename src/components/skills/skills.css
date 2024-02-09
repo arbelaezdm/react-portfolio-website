@@ -7,14 +7,17 @@
 .skill {
   background: var(--color-bg-variant);
   border-radius: 0 0 1em 1em;
-  border: 0.5px solid var(--color-primary);
+  border: 0.5px solid var(--color-border);
   height: fit-content;
   transition: var(--transition);
 }
 
 .skill:hover {
+  -webkit-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  -moz-box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
+  box-shadow: -1px -1px 12px 4px rgba(152, 145, 153, 1);
   background: transparent;
-  border-color: black;
+  border-color: var(--color-border);
   cursor: default;
 }
 
@@ -44,7 +47,7 @@
 
 .skill:hover .skill__head {
   transition: var(--transition);
-  border-bottom: 0.5px solid black;
+  border-bottom: 0.5px solid var(--color-border);
 }
 
 .skill__head h3 {
