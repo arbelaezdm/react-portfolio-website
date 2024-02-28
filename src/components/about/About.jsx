@@ -16,7 +16,7 @@ const About = () => {
         </p>
         <p>
           <b>Software Development Passion:</b> Coding is my creative outlet.
-          I’ve dived into languages like Python, JavaScript, and Java, building
+          I’ve dived into languages like HTML, CSS, JavaScript, ReactJS and MySQL, building
           robust applications and solving intricate problems. From front-end
           interfaces to back-end architecture, I’m committed to elegant,
           scalable solutions.
@@ -32,7 +32,7 @@ const About = () => {
         <p>
           <b>Maintenance Management:</b> I believe that reliability is the
           backbone of any successful operation. With a background in maintenance
-          management, I’ve honed my skills in predictive maintenance, root cause
+          management, I’ve honed my skills in predictive and preventive maintenance, root cause
           analysis, and failure prevention.
         </p>
       </div>

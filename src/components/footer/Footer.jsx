@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import "./footer.css";
 import { BsLinkedin } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
+import logo from "../../assets/logo.png"
 
 const Footer = () => {
   return (
     <footer>
-      <a href="#" className="footer__logo">
-        Diego
-      </a>
+      <div className="footer__logo">
+        <p>
+          Code Analytics Hub
+        </p>
+        <img src={logo} className="logo "/>
+      </div>
       <ul className="permalinks">
         <li>
           <a href="#">Home</a>
@@ -48,7 +52,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__copyright">
-        <small>&copy; Diego Arbelaez All rights reserved</small>
+        <small>&copy; Code Analytics Hub All rights reserved</small>
       </div>
     </footer>
   );

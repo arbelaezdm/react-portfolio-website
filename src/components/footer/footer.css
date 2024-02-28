@@ -6,19 +6,33 @@ footer {
   margin-top: 7rem;
 }
 
+.footer__logo{
+  display: flex;
+  flex-direction: row ;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.footer__logo p {
+  font-size: 2rem;
+  color: black;
+  padding-right: 1rem;
+}
+
+.logo{
+  width: 5rem;
+  height: 5rem;
+}
+
 footer a {
   color: black;
 }
 
+
+
 footer a:hover {
   text-decoration: underline;
-}
-
-.footer__logo{
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 1rem;
-  display: inline-block;
 }
 
 .permalinks {

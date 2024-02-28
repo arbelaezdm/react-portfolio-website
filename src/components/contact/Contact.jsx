@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
 import "./contact.css";
 import { FiMail } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
-import formValidation from "../FormValidation";
 
 const Contact = () => {
-  const navigate = useNavigate();
-
   const form = useRef();
 
   const userName = useRef("");
@@ -16,15 +12,17 @@ const Contact = () => {
 
   useEffect(() => {}, []);
 
-  const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({
+    errorName: "",
+    errorEmail: "",
+  });
+
   const [user, setUser] = useState({
     name: "",
     email: "",
   });
 
-  // =========  HANDLE INPUT  ============
+  // ===========  HANDLE INPUT  ============
   const handleInput = (e) => {
     e.preventDefault();
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -33,57 +31,81 @@ const Contact = () => {
   // ============  HANDLE SUBMIT  ============
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log(errors);
-    // ======= FORM VALIDATION ========
 
-    if (errors.name === "") {
-      setNameError(false);
-    } else {
-      setNameError(true);
-    }
+    // ========= NAME VALIDATION ================
+    if (user.name === "") {
+      setErrors((prev) => {
+        return { ...prev, errorName: "Este campo no puede estar vacio" };
+      });
+      console.log(errors.errorName);
+    } else if (user.name && user.name.length < 5) {
+      console.log("else if");
+      setErrors((prev) => ({
+        ...prev,
+        errorName: "Este campo debe tener minimo 5 caracteres",
+      }));
+      console.log(errors.errorName);
+    } 
+    // else {
+    //   setErrors({ errorName: "" });
+    //   console.log('error name')
+    //   console.log(errors.errorName);
+    // }
 
-    if (errors.email === "") {
-      setEmailError(false);
-    } else {
-      setEmailError(true);
-    }
+    // ========== EMAIL VALIDATION =============
 
-    if (errors.name === "" && errors.email === "") {
+    if (user.email === "") {
+      setErrors((prev) => ({
+        ...prev,
+        errorEmail: "Debes ingresar un email",
+      }));
+      console.log(errors.errorEmail);
+    } else if (user.email.includes("@")) {
+      setErrors((prev) => ({
+        ...prev,
+        errorEmail: "El mail no es valido",
+      }));
+      console.log(errors.errorEmail);
+    } 
+    // else {
+    //   setErrors((prev) => ({
+    //     ...prev,
+    //     errorEmail: "El mail no es valido",
+    //   }));
+    //   console.log(errors.errorEmail);
+    // }
+
+    // ======= SEND EMAIL & CLEAR FORM ========
+
+    if (errors.errorName === "" && errors.errorEmail === "") {
+      // ======= SEND EMAIL WITH EMAILJS ==========
+      // emailjs
+      //   .sendForm(
+      //     "service_o5v42dp",
+      //     "template_pr6mvea",
+      //     form.current,
+      //     "V45x1_YA4pzj4R-FS"
+      //   )
+      //   .then(
+      //     (result) => {
+      //       console.log(result.text);
+      //     },
+      //     (error) => {
+      //       console.log(error.text);
+      //     }
+      //   )
+      //   .then(() => {
+      //     setUser({
+      //       name: "",
+      //       email: "",
+      //     });
+      //   });
+
+      console.log("sending email");
+
       userName.current.value = "";
       email.current.value = "";
     }
-
-    // if (errors.name === "" && errors.email === "") {
-    //   console.log("user added");
-    // } else {
-    //   console.log("NOK");
-    // }
-
-    setErrors(formValidation(user));
-
-
-    // ======= SEND EMAIL WITH EMAILJS ==========
-    // emailjs
-    //   .sendForm(
-    //     "service_o5v42dp",
-    //     "template_pr6mvea",
-    //     form.current,
-    //     "V45x1_YA4pzj4R-FS"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   )
-    //   .then(() => {
-    //     setUser({
-    //       name: "",
-    //       email: "",
-    //     });
-    //   });
   };
 
   return (
@@ -122,10 +144,10 @@ const Contact = () => {
             placeholder="Your Full Name"
             onChange={handleInput}
             ref={userName}
-            className={nameError === true ? "name_error" : ""}
+            className={errors.errorName && "name_error"}
           />
           <div className="errors">
-            {errors.name && <span>{errors.name}</span>}
+            {errors.errorName && <span>{errors.errorName}</span>}
           </div>
           <input
             type="email"
@@ -133,10 +155,10 @@ const Contact = () => {
             placeholder="Your Email"
             onChange={handleInput}
             ref={email}
-            className={emailError === true ? "email_error" : ""}
+            className={errors.errorEmail && "email_error"}
           />
           <div className="errors">
-            {errors.email && <span>{errors.email}</span>}
+            {errors.errorEmail && <span>{errors.errorEmail}</span>}
           </div>
           <textarea
             name="message"
