@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { HashLink } from 'react-router-hash-link';
 import "./contact.css";
 import { FiMail } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
@@ -9,18 +10,21 @@ const Contact = () => {
 
   const userName = useRef("");
   const email = useRef("");
-
-  useEffect(() => {}, []);
-
-  const [errors, setErrors] = useState({
-    errorName: "",
-    errorEmail: "",
-  });
+  const comments = useRef("");
 
   const [user, setUser] = useState({
     name: "",
     email: "",
   });
+
+  const [errors, setErrors] = useState({});
+
+  const [message, setMessage] = useState("");
+
+  const [messageClass, setMessageClass] = useState("");
+
+  useEffect(() => {}, [errors]);
+  useEffect(() => {}, [messageClass]);
 
   // ===========  HANDLE INPUT  ============
   const handleInput = (e) => {
@@ -29,55 +33,34 @@ const Contact = () => {
   };
 
   // ============  HANDLE SUBMIT  ============
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    const validationErrors = {};
+
     // ========= NAME VALIDATION ================
-    if (user.name === "") {
-      setErrors((prev) => {
-        return { ...prev, errorName: "Este campo no puede estar vacio" };
-      });
-      console.log(errors.errorName);
-    } else if (user.name && user.name.length < 5) {
-      console.log("else if");
-      setErrors((prev) => ({
-        ...prev,
-        errorName: "Este campo debe tener minimo 5 caracteres",
-      }));
-      console.log(errors.errorName);
-    } 
-    // else {
-    //   setErrors({ errorName: "" });
-    //   console.log('error name')
-    //   console.log(errors.errorName);
-    // }
+
+    if (!user.name.trim()) {
+      validationErrors.name = "Name is required";
+      console.log(errors);
+    }
+
+    if (!user.email.trim()) {
+      validationErrors.email = "Email is required";
+      console.log(errors);
+    } else if (!/\S+@\S+\.\S+/.test(user.email)) {
+      validationErrors.email = "Email is not valid";
+    }
 
     // ========== EMAIL VALIDATION =============
 
-    if (user.email === "") {
-      setErrors((prev) => ({
-        ...prev,
-        errorEmail: "Debes ingresar un email",
-      }));
-      console.log(errors.errorEmail);
-    } else if (user.email.includes("@")) {
-      setErrors((prev) => ({
-        ...prev,
-        errorEmail: "El mail no es valido",
-      }));
-      console.log(errors.errorEmail);
-    } 
-    // else {
-    //   setErrors((prev) => ({
-    //     ...prev,
-    //     errorEmail: "El mail no es valido",
-    //   }));
-    //   console.log(errors.errorEmail);
-    // }
-
     // ======= SEND EMAIL & CLEAR FORM ========
 
-    if (errors.errorName === "" && errors.errorEmail === "") {
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
       // ======= SEND EMAIL WITH EMAILJS ==========
       // emailjs
       //   .sendForm(
@@ -94,17 +77,24 @@ const Contact = () => {
       //       console.log(error.text);
       //     }
       //   )
-      //   .then(() => {
-      //     setUser({
-      //       name: "",
-      //       email: "",
-      //     });
-      //   });
 
       console.log("sending email");
+      console.log(`validation errors: ${validationErrors.length}`);
+
+      setMessage(`${user.name} your message was sent successful`);
+      setMessageClass("successful");
+
+      await delay(2000);
 
       userName.current.value = "";
       email.current.value = "";
+      comments.current.value = "";
+
+      // <HashLink smooth to="/#about"></HashLink>
+
+
+
+      window.location.href = "/about";
     }
   };
 
@@ -144,10 +134,10 @@ const Contact = () => {
             placeholder="Your Full Name"
             onChange={handleInput}
             ref={userName}
-            className={errors.errorName && "name_error"}
+            className={errors.name && "name_error"}
           />
           <div className="errors">
-            {errors.errorName && <span>{errors.errorName}</span>}
+            {errors.name && <span>{errors.name}</span>}
           </div>
           <input
             type="email"
@@ -155,23 +145,26 @@ const Contact = () => {
             placeholder="Your Email"
             onChange={handleInput}
             ref={email}
-            className={errors.errorEmail && "email_error"}
+            className={errors.email && "email_error"}
           />
           <div className="errors">
-            {errors.errorEmail && <span>{errors.errorEmail}</span>}
+            {errors.email && <span>{errors.email}</span>}
           </div>
           <textarea
-            name="message"
+            name="comments"
             rows="7"
             placeholder="Your Message"
+            ref={comments}
           ></textarea>
           <button type="submit" className="btn btn-primary" onClick={sendEmail}>
             Send Message
           </button>
+          <div className={messageClass}>
+            {message && <span>{message}</span>}
+          </div>
         </form>
       </div>
     </section>
   );
 };
-
 export default Contact;
