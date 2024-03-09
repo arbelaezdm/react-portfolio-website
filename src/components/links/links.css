@@ -16,9 +16,8 @@
 
 .container_socials a {
   color: var(--color-bg-variant);
-  transition: all 2s;
 }
 
 .container_socials a:hover {
-   color: rgb(209, 206, 206);
+   color: gray
 }

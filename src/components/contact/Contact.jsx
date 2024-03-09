@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 import "./contact.css";
 import { FiMail } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
@@ -15,6 +15,7 @@ const Contact = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
+    comments: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -54,6 +55,10 @@ const Contact = () => {
       validationErrors.email = "Email is not valid";
     }
 
+    if (!user.comments.trim()) {
+      validationErrors.comments = "Please insert your message";
+    }
+
     // ========== EMAIL VALIDATION =============
 
     // ======= SEND EMAIL & CLEAR FORM ========
@@ -89,10 +94,6 @@ const Contact = () => {
       userName.current.value = "";
       email.current.value = "";
       comments.current.value = "";
-
-      // <HashLink smooth to="/#about"></HashLink>
-
-
 
       window.location.href = "/about";
     }
@@ -154,8 +155,13 @@ const Contact = () => {
             name="comments"
             rows="7"
             placeholder="Your Message"
+            onChange={handleInput}
             ref={comments}
+            className={errors.email && "email_error"}
           ></textarea>
+          <div className="errors">
+            {errors.comments && <span>{errors.comments}</span>}
+          </div>
           <button type="submit" className="btn btn-primary" onClick={sendEmail}>
             Send Message
           </button>

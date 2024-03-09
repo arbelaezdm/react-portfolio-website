@@ -33,6 +33,7 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+  color: black;
 }
 
 .permalinks {
@@ -51,16 +52,17 @@ footer a:hover {
 }
 
 .footer__socials a{
-  color: black;
+  color: var( --color-bg-variant);
+  transition: var(--transition);
   padding: 0.4rem;
   border-radius: 0.7rem;
   display: flex;
   border: 1px solid transparent;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .footer__socials a:hover{
-  color: var(--color-bg);
+  color: grey;
   transition: var(--transition);
 }
 
