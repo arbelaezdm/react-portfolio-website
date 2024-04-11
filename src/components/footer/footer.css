@@ -90,6 +90,10 @@ footer a:hover {
     gap: 1.5rem;
   }
 
+  .footer__logo {
+    flex-direction: column;
+  }
+
   .footer__socials {
     margin-bottom: 2.6rem;
   }

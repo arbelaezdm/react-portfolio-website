@@ -67,7 +67,7 @@ const Skills = () => {
                 <BsPatchCheckFill className="engineer_list_icon" />
               </div>
               <div>
-                <p>Logistis</p>
+                <p>Logistics</p>
               </div>
             </li>
 
@@ -239,7 +239,7 @@ const Skills = () => {
 
         <article className="skill">
           <div className="skill__head">
-            <h3>BI</h3>
+            <h3>BUSINESS INTELLIGENCE</h3>
           </div>
 
           <ul className="skill__list">

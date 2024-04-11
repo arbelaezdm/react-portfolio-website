@@ -112,7 +112,7 @@
 
 /* ================= MEDIA QUERIES (SMAILL DEVICES - PHONES) ==================== */
 @media screen and (max-width: 600px) {
-  .experiences__container {
+  .experiences__container, .experience_description {
     grid-template-columns: 1fr;
   }
 }

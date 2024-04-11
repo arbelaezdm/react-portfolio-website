@@ -29,7 +29,7 @@ const Portfolio = () => {
           <h3 className="portfolio__title">Apps Developed in PowerApps</h3>
 
           <p className="text_description">
-            Apps that was developed to fill out many forms with the data that is
+            Apps that was developed to fill out many forms with data that is
             required for safety and quality departments in P&G to store in data
             base.
           </p>
@@ -94,7 +94,7 @@ const Portfolio = () => {
             <TbWorld className="icon_technology" />
           </div>
 
-          <h3 className="portfolio__title">Website Arepas Diana</h3>
+          <h3 className="portfolio__title">Website - Arepas Diana</h3>
 
           <p className="text_description">
             Website created with ReactJS for a small business in US. You can
@@ -134,12 +134,11 @@ const Portfolio = () => {
           </div>
 
           <h3 className="portfolio__title">
-            Ecommerce Final Project Full Stack Course
+            Ecommerce Final Project - Full Stack Course
           </h3>
 
           <p className="text_description">
-            Website created with HTML | CSS | JavaScript | ReactJS | EJS |
-            NodeJS | MySQL{" "}
+            Website created with HTML | CSS | JavaScript | NodeJS | Express | Multer | Sequelize | ReactJS | EJS | MySQL
           </p>
 
           <span className="text_notes">
@@ -150,7 +149,7 @@ const Portfolio = () => {
           </span>
 
           <div>
-            <a href="https://google.com" target="_blank">
+            <a href="https://electrodoggy-pd-6c23aacc2bdb.herokuapp.com/" target="_blank">
               <GiClick className="text_notes_click" />
             </a>
           </div>

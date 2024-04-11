@@ -67,21 +67,21 @@ const Contact = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       // ======= SEND EMAIL WITH EMAILJS ==========
-      // emailjs
-      //   .sendForm(
-      //     "service_o5v42dp",
-      //     "template_pr6mvea",
-      //     form.current,
-      //     "V45x1_YA4pzj4R-FS"
-      //   )
-      //   .then(
-      //     (result) => {
-      //       console.log(result.text);
-      //     },
-      //     (error) => {
-      //       console.log(error.text);
-      //     }
-      //   )
+      emailjs
+        .sendForm(
+          "service_o5v42dp",
+          "template_pr6mvea",
+          form.current,
+          "V45x1_YA4pzj4R-FS"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
 
       console.log("sending email");
       console.log(`validation errors: ${validationErrors.length}`);
@@ -95,7 +95,9 @@ const Contact = () => {
       email.current.value = "";
       comments.current.value = "";
 
-      window.location.href = "/about";
+      setMessageClass("");
+      setMessage("");
+      
     }
   };
 
@@ -108,11 +110,11 @@ const Contact = () => {
           <article className="contact__option">
             <FiMail className="contact__option-icon" />
             <h4>Email</h4>
-            <h5>arbelaez.dm.1@gmail.com</h5>
+            <h5>diegoarbelaez@codeanalyticshub.com</h5>
             <a href="mailto:arbelaez.dm@hotmail.com">Send me an email</a>
           </article>
 
-          <article className="contact__option">
+          <article className="contact_`_option">
             <BsWhatsapp className="contact__option-icon" />
             <h4>Whatsapp</h4>
             <a
