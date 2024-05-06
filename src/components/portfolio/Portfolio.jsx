@@ -26,7 +26,7 @@ const Portfolio = () => {
             <SiPowerapps className="icon_technology" />
           </div>
 
-          <h3 className="portfolio__title">Apps Developed in PowerApps</h3>
+          <h3 className="portfolio__title">Developed Apps in PowerApps</h3>
 
           <p className="text_description">
             Apps that was developed to fill out many forms with data that is
@@ -60,7 +60,7 @@ const Portfolio = () => {
             <SiPowerbi className="icon_technology" />
           </div>
 
-          <h3 className="portfolio__title">Dashboards Developed in Power BI</h3>
+          <h3 className="portfolio__title">Developed Dashboards in Power BI</h3>
 
           <p className="text_description">
             Many dashboards was developed to show data according with the
