@@ -26,7 +26,7 @@ const Portfolio = () => {
             <SiPowerapps className="icon_technology" />
           </div>
 
-          <h3 className="portfolio__title">New Testing Developed Apps with PowerApps</h3>
+          <h3 className="portfolio__title"> Testing Developed Apps with PowerApps</h3>
 
           <p className="text_description">
             Apps that was developed to fill out many forms with data that is
