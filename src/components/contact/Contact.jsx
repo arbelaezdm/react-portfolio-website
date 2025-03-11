@@ -97,7 +97,6 @@ const Contact = () => {
 
       setMessageClass("");
       setMessage("");
-      
     }
   };
 
@@ -110,8 +109,8 @@ const Contact = () => {
           <article className="contact__option">
             <FiMail className="contact__option-icon" />
             <h4>Email</h4>
-            <h5>diegoarbelaez@codeanalyticshub.com</h5>
-            <a href="mailto:arbelaez.dm@hotmail.com">Send me an email</a>
+            <h5>diegoarbelaez@analyticsfortech.com</h5>
+            <a href="mailto:analyticsfortech@outlook.com">Send me an email</a>
           </article>
 
           <article className="contact_`_option">

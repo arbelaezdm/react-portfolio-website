@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import "./footer.css";
 import { BsLinkedin } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer__logo">
-        <p>
-          Code Analytics Hub
-        </p>
-        <img src={logo} className="logo "/>
+        <p>Analytics Fortech</p>
+        <img src={logo} className="logo " />
       </div>
       <ul className="permalinks">
         <li>
@@ -52,7 +50,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__copyright">
-        <small>&copy; Code Analytics Hub All rights reserved</small>
+        <small>2025 &copy; Analytics Fortech All rights reserved</small>
       </div>
     </footer>
   );
