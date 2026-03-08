@@ -11,6 +11,10 @@ import { FaNodeJs } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 import { SiPowerbi } from "react-icons/si";
+import { SiTableau } from "react-icons/si";
+import { SiPython } from "react-icons/si";
+import { SiPandas } from "react-icons/si";
+import { SiNumpy } from "react-icons/si";
 
 const Skills = () => {
   return (
@@ -20,7 +24,7 @@ const Skills = () => {
       <div className="container skills__container">
         <article className="skill">
           <div className="skill__head">
-            {/* ======== FRONTEND =================*/}
+            {/* ======== ENGINEERING =================*/}
 
             <h3>ENGINEERING</h3>
           </div>
@@ -155,6 +159,8 @@ const Skills = () => {
         </article>
         {/* =====   END OF ENGINEERING ====== */}
 
+        {/* =====   FRONTEND ====== */}
+
         <article className="skill">
           <div className="skill__head">
             <h3>FRONTEND</h3>
@@ -246,6 +252,22 @@ const Skills = () => {
             <li>
               <SiPowerbi className="skill__list_icon" />
               <p>Power BI</p>
+            </li>
+            <li>
+              <SiTableau className="skill__list_icon" />
+              <p>Tableau</p>
+            </li>
+            <li>
+              <SiPython className="skill__list_icon" />
+              <p>Python</p>
+            </li>
+            <li>
+              <SiPandas className="skill__list_icon" />
+              <p>Pandas</p>
+            </li>
+            <li>
+              <SiNumpy className="skill__list_icon" />
+              <p>NumPy</p>
             </li>
           </ul>
         </article>

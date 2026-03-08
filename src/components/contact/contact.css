@@ -8,6 +8,7 @@
 .contact__options {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 1.2rem;
 }
 
@@ -55,7 +56,7 @@ textarea {
   border: 2px solid black;
   resize: none;
   color: black;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
 }
 

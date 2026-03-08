@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { HashLink } from "react-router-hash-link";
 import "./contact.css";
 import { FiMail } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
@@ -110,7 +109,9 @@ const Contact = () => {
             <FiMail className="contact__option-icon" />
             <h4>Email</h4>
             <h5>diegoarbelaez@analyticsfortech.com</h5>
-            <a href="mailto:analyticsfortech@outlook.com">Send me an email</a>
+            <a href="mailto:diegoarbelaez@analyticsfortech.com">
+              Send me an email
+            </a>
           </article>
 
           <article className="contact_`_option">
@@ -119,6 +120,7 @@ const Contact = () => {
             <a
               href="https://api.whatsapp.com/send?phone=17544576330"
               target="_blank"
+              rel="noreferrer"
             >
               Send me a message
             </a>

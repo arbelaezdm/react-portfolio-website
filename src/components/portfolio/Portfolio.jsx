@@ -63,7 +63,7 @@ const Portfolio = () => {
           <h3 className="portfolio__title">Developed Dashboards in Power BI</h3>
 
           <p className="text_description">
-            Many dashboards was developed to show data according with the
+            Many dashboards was developed to present data according with the
             requirements of the departments of costs, safety, contractors,
             quality assurance, education & training and material process in P&G.
           </p>
@@ -138,7 +138,8 @@ const Portfolio = () => {
           </h3>
 
           <p className="text_description">
-            Website created with HTML | CSS | JavaScript | NodeJS | Express | Multer | Sequelize | ReactJS | EJS | MySQL
+            Website created with HTML | CSS | JavaScript | NodeJS | Express |
+            Multer | Sequelize | ReactJS | EJS | MySQL
           </p>
 
           <span className="text_notes">
@@ -149,7 +150,10 @@ const Portfolio = () => {
           </span>
 
           <div>
-            <a href="https://electrodoggy-pd-6c23aacc2bdb.herokuapp.com/" target="_blank">
+            <a
+              href="https://electrodoggy-pd-6c23aacc2bdb.herokuapp.com/"
+              target="_blank"
+            >
               <GiClick className="text_notes_click" />
             </a>
           </div>
